@@ -50,8 +50,7 @@ export default defineConfig("0.0.1", {
 		// Set to false to leave the bot presence untouched.
 		enabled: true,
 		// Activity text shown in the member list. Please include a link to the project in either the bot's status or profile description or the embeds to comply with the license terms.
-		text: "Starám se o Respublicu." +
-			" :v:",
+		text: "Starám se o Respublicu. <:v:>",
 		// PLAYING, STREAMING, LISTENING, WATCHING, CUSTOM, COMPETING
 		type: "WATCHING",
 		// Only used for STREAMING.
