@@ -17,9 +17,9 @@ import { defineConfig } from "@/config/index.js";
 
 export default defineConfig("0.0.1", {
 	// Your Discord application (bot) client ID.
-	clientId: "123456789012345678",
+	clientId: "1533170961845846239",
 	// The guild where the bot is installed and where commands should be deployed.
-	guildId: "123456789012345678",
+	guildId: "1530647624678375465",
 	// Supported locales: "en", "fr"
 	lang: "en",
 	// Transcript ID style used by ticket.pm uploads.
@@ -33,7 +33,7 @@ export default defineConfig("0.0.1", {
 		// Set to true to post audit logs for ticket actions.
 		enabled: true,
 		// Channel where ticket audit logs will be sent.
-		channelId: "171717171717171717",
+		channelId: "1538212598502260757",
 		// Omit this object to enable every supported log type.
 		events: {
 			ticketCreate: true,
@@ -50,7 +50,8 @@ export default defineConfig("0.0.1", {
 		// Set to false to leave the bot presence untouched.
 		enabled: true,
 		// Activity text shown in the member list. Please include a link to the project in either the bot's status or profile description or the embeds to comply with the license terms.
-		text: "Powered by git.new/ticketbot",
+		text: "Starám se o Respublicu." +
+			" :v:",
 		// PLAYING, STREAMING, LISTENING, WATCHING, CUSTOM, COMPETING
 		type: "WATCHING",
 		// Only used for STREAMING.
@@ -64,15 +65,15 @@ export default defineConfig("0.0.1", {
 		// Available parameters here:
 		// {ticketId} {ticketNumber} {ticketTypeKey} {ticketTypeName}
 		// {createdById} {createdByUsername} {userId} {username}
-		channelNameTemplate: "{ticketNumber}-ticket-{username}",
+		channelNameTemplate: "{username}",
 		// How many open tickets a single user may have at once. Use 0 for unlimited.
 		maxOpenPerUser: 1,
 		// Global staff roles that can see and manage tickets.
-		staffRoleIds: ["111111111111111111"],
+		staffRoleIds: ["1530658819686793216","1530861776835448892"],
 		// Roles that are blocked from opening any ticket type by default.
-		blockedRoleIds: ["222222222222222222"],
+		blockedRoleIds: ["0"],
 		// Roles mentioned in the welcome message when a ticket is opened.
-		mentionRoleIds: ["333333333333333333"],
+		mentionRoleIds: ["1530861776835448892","1530658819686793216"],
 		// Fallback open-ticket template path inside the messages directory.
 		// Create your own file under messages/ and point a ticket type at it.
 		// Example file: messages/tickets/ticket-opened-billing.ts
@@ -101,15 +102,15 @@ export default defineConfig("0.0.1", {
 			// {claimerId} {claimerMention} {claimerUsername}
 			// {createdById} {createdByMention} {createdByUsername}
 			// {ticketId} {ticketNumber} {ticketTypeKey} {ticketTypeName} {userId} {username}
-			nameWhenClaimed: "{ticketNumber}-claimed-{claimerUsername}",
+			// nameWhenClaimed: "{ticketNumber}-claimed-{claimerUsername}",
 			// Optional category move applied after a successful claim.
 			// Leave blank to keep the ticket in its original category.
-			categoryWhenClaimed: "444444444444444444",
+			// categoryWhenClaimed: "444444444444444444",
 			// disabled: nobody can take an existing claim
 			// staff: any configured staff member can take over
 			// roles: only roles listed in takeoverRoleIds can take over
 			takeoverMode: "roles",
-			takeoverRoleIds: ["555555555555555555"]
+			takeoverRoleIds: ["1530658819686793216"]
 		},
 		close: {
 			// If true, only staff can close tickets.
