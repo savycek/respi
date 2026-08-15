@@ -27,7 +27,12 @@ import botConfig from "../config/config.js";
 
 export async function createBotApp() {
 	const logger = createLogger("bot");
-	const db = drizzle(process.env.DB_FILE_NAME);
+	const db = drizzle({
+		connection: {
+			url: process.env.DB_FILE_NAME!,
+			authToken: process.env.DB_AUTH_TOKEN
+		}
+	});
 
 	const rest = new REST({ version: "10" }).setToken(process.env.DISCORD_TOKEN);
 	const gateway = new WebSocketManager({

@@ -12,7 +12,7 @@
 	"scripts": {
 		"typecheck": "tsc --noEmit -p tsconfig.json",
 		"check": "tsc --noEmit -p tsconfig.json && biome check .",
-		"prepare:config": "test -f ./config/config.ts || cp ./config/config.example.ts ./config/config.ts",
+		"prepare:config": "test -f ./config/config.ts || cp config/config.ts ./config/config.ts",
 		"i18n": "typesafe-i18n --no-watch && biome check --write i18n",
 		"lint": "biome lint .",
 		"format": "biome format .",

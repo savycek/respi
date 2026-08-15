@@ -74,37 +74,37 @@ interface CliValues {
 }
 
 const CREATE_TICKETS_TABLE = `
-CREATE TABLE IF NOT EXISTS tickets (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	channelId TEXT NOT NULL UNIQUE,
-	creationMessageId TEXT NOT NULL UNIQUE,
-	type TEXT NOT NULL,
-	reason TEXT,
-	createdBy TEXT NOT NULL,
-	createdAt INTEGER NOT NULL,
-	claimedAt INTEGER,
-	claimedBy TEXT,
-	invitedUserIds TEXT NOT NULL DEFAULT '[]',
-	closedAt INTEGER,
-	closedBy TEXT,
-	closedReason TEXT,
-	transcriptUrl TEXT
-)`;
+	CREATE TABLE IF NOT EXISTS tickets (
+										   id INTEGER PRIMARY KEY AUTOINCREMENT,
+		                                   channelId TEXT NOT NULL UNIQUE,
+		                                   creationMessageId TEXT NOT NULL UNIQUE,
+		                                   type TEXT NOT NULL,
+		                                   reason TEXT,
+		                                   createdBy TEXT NOT NULL,
+		                                   createdAt INTEGER NOT NULL,
+		                                   claimedAt INTEGER,
+		                                   claimedBy TEXT,
+		                                   invitedUserIds TEXT NOT NULL DEFAULT '[]',
+		                                   closedAt INTEGER,
+		                                   closedBy TEXT,
+		                                   closedReason TEXT,
+		                                   transcriptUrl TEXT
+	)`;
 
 const CREATE_PANEL_MESSAGES_TABLE = `
-CREATE TABLE IF NOT EXISTS panel_messages (
-	panelKey TEXT PRIMARY KEY,
-	channelId TEXT NOT NULL,
-	messageId TEXT NOT NULL,
-	updatedAt INTEGER NOT NULL
-)`;
+	CREATE TABLE IF NOT EXISTS panel_messages (
+												  panelKey TEXT PRIMARY KEY,
+		                                          channelId TEXT NOT NULL,
+		                                          messageId TEXT NOT NULL,
+		                                          updatedAt INTEGER NOT NULL
+	)`;
 
 const CREATE_APP_META_TABLE = `
-CREATE TABLE IF NOT EXISTS app_meta (
-	key TEXT PRIMARY KEY,
-	value TEXT NOT NULL,
-	updatedAt INTEGER NOT NULL
-)`;
+	CREATE TABLE IF NOT EXISTS app_meta (
+											key TEXT PRIMARY KEY,
+		                                    value TEXT NOT NULL,
+		                                    updatedAt INTEGER NOT NULL
+	)`;
 
 loadEnv({ path: "./config/.env", quiet: true });
 
@@ -338,7 +338,7 @@ function mapV3Ticket(row: Row, typeMap: Map<string, string>): V3TicketRow {
 	if (!Object.hasOwn(botConfig.ticketTypes, mappedType)) {
 		throw new Error(
 			`Unknown v3 ticket type "${rawType}" for ticket ${readInteger(row, "id")}. ` +
-				`Add a matching v4 ticketTypes entry or pass --type-map ${rawType}=<v4Key>.`
+			`Add a matching v4 ticketTypes entry or pass --type-map ${rawType}=<v4Key>.`
 		);
 	}
 
@@ -459,7 +459,7 @@ async function assertTargetCanBeUsed(target: Client, overwrite: boolean) {
 	if (ticketCount > 0 || panelMessageCount > 0) {
 		throw new Error(
 			`Target database already contains ${ticketCount} ticket row(s) and ${panelMessageCount} panel row(s). ` +
-				"Pass --overwrite to clear those v4 tables before migrating."
+			"Pass --overwrite to clear those v4 tables before migrating."
 		);
 	}
 }
