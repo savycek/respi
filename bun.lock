@@ -8,7 +8,7 @@
         "@discordjs/rest": "^2.6.1",
         "@discordjs/ws": "^2.0.4",
         "@libsql/client": "^0.17.4",
-        "@ticketpm/core": "^0.0.14",
+        "@ticketpm/core": "^0.0.15",
         "@ticketpm/discord-api": "^0.0.13",
         "discord-api-types": "^0.38.49",
         "dotenv": "^17.4.2",
@@ -150,7 +150,7 @@
 
     "@sapphire/snowflake": ["@sapphire/snowflake@3.5.5", "", {}, "sha512-xzvBr1Q1c4lCe7i6sRnrofxeO1QTP/LKQ6A6qy0iB4x5yfiSfARMEQEghojzTNALDTcv8En04qYNIco9/K9eZQ=="],
 
-    "@ticketpm/core": ["@ticketpm/core@0.0.14", "", {}, "sha512-IrAt4e3zWp1RMeEGb94bi1ElbM60NozOgKwc0FASWbQkz2Bi8Sl9qJsOi2QxuXtLRjQiiVYOQvT0M5w9t+NN/g=="],
+    "@ticketpm/core": ["@ticketpm/core@0.0.15", "", {}, "sha512-UCm89kLE+pKXLtIIOBX+uZQrJqnKRGtwNxZhgqYdJnfaYWKsuVMaNpcWL8IAqQM4qKGYtHTsBOmw/gnVHFcO4g=="],
 
     "@ticketpm/discord-api": ["@ticketpm/discord-api@0.0.13", "", { "dependencies": { "@ticketpm/core": "0.0.13", "discord-api-types": "^0.37.119" } }, "sha512-9plLqvFR1HOvmnR+BRqggej3D6I0fukAzvp5ZioTZHGd2CZ7NEmDtimqlw+1qqn5CR6KnGfPIvsrvc5+o5eVaQ=="],
 
