@@ -21,6 +21,7 @@ import { defineConfig } from "drizzle-kit";
 config({ path: "./config/.env" });
 
 const databaseUrl = process.env.DB_FILE_NAME;
+const databaseToken = process.env.DB_AUTH_TOKEN;
 
 if (databaseUrl?.startsWith("file:")) {
 	const databasePath = databaseUrl.slice("file:".length);
@@ -34,9 +35,10 @@ export default defineConfig({
 	schema: "./src/db/schema.ts",
 	dialect: "sqlite",
 	dbCredentials: {
-		url: databaseUrl
+		url: databaseUrl!,
+		authToken: databaseToken
 	}
-});
+} as any);
 
 /*
 Ticket-Bot is licensed under the GNU Affero General Public License,
